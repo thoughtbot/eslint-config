@@ -1,0 +1,21 @@
+{
+  "author": "thoughtbot, Inc.",
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "@thoughtbot/eslint-config",
+  "peerDependencies": {
+    "eslint": ">= 5.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thoughtbot/eslint-config.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.1.0"
+}
