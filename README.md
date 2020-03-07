@@ -58,6 +58,22 @@ You can also turn a rule off, by setting the value of the rule to `"off"`:
 
 [eslint-configuration]: https://eslint.org/docs/user-guide/configuring
 
+### Atom integration
+
+ESLint can be integrated into [Atom][atom] so that you will be alerted of
+any warnings and errors inline, while you work.
+
+Install the [linter][linter] and [linter-eslint][linter-eslint] packages
+using Atom’s package manager or enter this into your terminal:
+
+```bash
+apm install linter linter-eslint
+```
+
+[atom]: https://atom.io/
+[linter]: https://atom.io/packages/linter
+[linter-eslint]: https://atom.io/packages/linter-eslint
+
 ## License
 
 thoughtbot ESLint Config is copyright (c) 2020 thoughtbot, inc.
