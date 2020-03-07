@@ -15,7 +15,8 @@
     "url": "git+https://github.com/thoughtbot/eslint-config.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublishOnly": "git push && git push --tags",
+    "version": "git add CHANGELOG.md"
   },
   "version": "0.1.0"
 }
