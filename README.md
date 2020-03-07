@@ -60,7 +60,7 @@ You can also turn a rule off, by setting the value of the rule to `"off"`:
 
 ## License
 
-thoughtbot ESLint Config is copyright (c) 2019 thoughtbot, inc.
+thoughtbot ESLint Config is copyright (c) 2020 thoughtbot, inc.
 It is free software, and may be redistributed under the
 terms specified in the [LICENSE] file.
 
