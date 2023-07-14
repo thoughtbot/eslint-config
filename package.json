@@ -23,7 +23,7 @@
   },
   "scripts": {
     "prepublishOnly": "git push && git push --tags",
-    "version": "git add CHANGELOG.md"
+    "postinstall": "node bin/postinstall.js"
   },
   "peerDependencies": {
     "eslint": ">= 5.7.0",
