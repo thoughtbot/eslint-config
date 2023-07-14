@@ -63,5 +63,9 @@ module.exports = {
       'error',
       { functions: true, classes: true, variables: true },
     ],
+
+    // overrides
+
+    'no-use-before-define': ['error', { functions: false, variables: false }],
   },
 };

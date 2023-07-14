@@ -20,7 +20,6 @@ module.exports = {
     './rules/es6',
     './rules/imports',
     './rules/strict',
-    './rules/overrides',
   ],
   plugins: ['import'],
 };

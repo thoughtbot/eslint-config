@@ -647,6 +647,25 @@ module.exports = {
         ignoreCase: false,
       },
     ],
+
+    // overrides
+
+    'react/jsx-filename-extension': [
+      1,
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+    ],
+
+    // makes reusable components unwieldy
+    'react/jsx-props-no-spreading': 'off',
+
+    // not needed for React 17+
+    'react/react-in-jsx-scope': 'off',
+
+    // fine for optional props to be undefined
+    'react/require-default-props': 'off',
+
+    // rule tailored more to web, TS handles this
+    'react/style-prop-object': 'off',
   },
 
   settings: {

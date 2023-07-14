@@ -297,5 +297,36 @@ module.exports = {
     // https://github.com/import-js/eslint-plugin-import/blob/d5fc8b670dc8e6903dbb7b0894452f60c03089f5/docs/rules/no-empty-named-blocks.md
     // TODO, semver-minor: enable
     'import/no-empty-named-blocks': 'off',
+
+    // overrides
+
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'import/extensions': [
+      'error',
+      'never',
+      {
+        variables: 'always',
+        hook: 'always',
+        constants: 'always',
+        helpers: 'always',
+        types: 'always',
+        gql: 'always',
+        graphql: 'always',
+        svg: 'always',
+        json: 'always',
+        png: 'always',
+        gif: 'always',
+        jpeg: 'always',
+        jpg: 'always',
+        eot: 'always',
+        woff: 'always',
+        woff2: 'always',
+        otf: 'always',
+      },
+    ],
+
+    // since these happen temporarily until they are cleaned up, it can be nice to
+    // see them as warnings
+    'import/order': ['warn', { groups: [['builtin', 'external', 'internal']] }],
   },
 };

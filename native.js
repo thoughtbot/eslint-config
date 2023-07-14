@@ -6,7 +6,6 @@ module.exports = {
     'plugin:react-native-a11y/all',
     require.resolve('./react-base'),
     './rules/native',
-    './rules/overrides',
     './prettier',
   ],
   settings: {

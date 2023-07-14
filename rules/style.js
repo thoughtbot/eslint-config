@@ -649,5 +649,9 @@ module.exports = {
 
     // require regex literals to be wrapped in parentheses
     'wrap-regex': 'off',
+
+    // overrides
+
+    'no-nested-ternary': 'off',
   },
 };

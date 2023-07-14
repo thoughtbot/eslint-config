@@ -202,5 +202,11 @@ module.exports = {
     // enforce spacing around the * in yield* expressions
     // https://eslint.org/docs/rules/yield-star-spacing
     'yield-star-spacing': ['error', 'after'],
+
+    // overrides
+
+    // default rule disallows braces on single line arrow functions, not enough
+    // value to this
+    'arrow-body-style': 'off',
   },
 };
