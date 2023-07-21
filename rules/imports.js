@@ -145,10 +145,22 @@ module.exports = {
 
     // ensure absolute imports are above relative imports and that unassigned imports are ignored
     // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/order.md
-    // TODO: enforce a stricter convention in module import order?
-    'import/order': [
-      'error',
-      { groups: [['builtin', 'external', 'internal']] },
+     "import/order": [
+      "warn",
+      {
+        "alphabetize": {
+          "order": "asc"
+        },
+        "newlines-between": "always",
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ]
+      }
     ],
 
     // Require a newline after the last import/require in a group
