@@ -453,5 +453,11 @@ module.exports = {
     // require or disallow Yoda conditions
     // https://eslint.org/docs/rules/yoda
     yoda: 'error',
+
+    // overrides
+
+    // allows circumventing no-floating-promises rule with eg.
+    // void someAsyncFunction()
+    'no-void': ['error', { allowAsStatement: true }],
   },
 };
