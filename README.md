@@ -6,7 +6,7 @@ guides][thoughtbot-js-guides]. These configurations are largely based off of and
 compatible with [AirBnb’s ESLint config][airbnb-config].
 
 [eslint]: https://eslint.org/
-[thoughtbot-js-guides]: https://github.com/thoughtbot/guides/tree/master/style/javascript
+[thoughtbot-js-guides]: https://github.com/thoughtbot/guides/tree/main/javascript
 [airbnb-config]: https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb
 
 ## Installation
