@@ -1,3 +1,7 @@
+// these rules are based on the thoughtful work from the Airbnb team, with overrides
+// of the Airbnb rules added at the end
+// https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb
+
 // The ESLint browser environment defines all browser globals as valid,
 // even though most people don't know some of them exist (e.g. `name` or `status`).
 // This is dangerous as it hides accidentally undefined variables.
