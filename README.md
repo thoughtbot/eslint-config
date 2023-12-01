@@ -106,7 +106,7 @@ terms specified in the [LICENSE] file.
 
 ## About
 
-![thoughtbot](http://presskit.thoughtbot.com/images/thoughtbot-logo-for-readmes.svg)
+<img src="https://thoughtbot.com/thoughtbot-logo-for-readmes.svg" width="375" />
 
 thoughtbot ESLint Config is maintained and funded by thoughtbot, inc.
 The names and logos for thoughtbot are trademarks of thoughtbot, inc.
