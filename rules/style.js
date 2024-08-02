@@ -355,10 +355,6 @@ module.exports = {
     // https://eslint.org/docs/rules/no-bitwise
     'no-bitwise': 'error',
 
-    // disallow use of the continue statement
-    // https://eslint.org/docs/rules/no-continue
-    'no-continue': 'error',
-
     // disallow comments inline after code
     'no-inline-comments': 'off',
 
@@ -421,11 +417,6 @@ module.exports = {
         selector: 'ForInStatement',
         message:
           'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
-      },
-      {
-        selector: 'ForOfStatement',
-        message:
-          'iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations.',
       },
       {
         selector: 'LabeledStatement',
