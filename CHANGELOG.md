@@ -14,3 +14,7 @@ Nothing at the moment.
 ### Added
 
 - Initialized project.
+
+## 1.0.3 - 2024-01-10
+
+- Upgrade dependencies: eslint-plugin-react-hooks 5.0.0
