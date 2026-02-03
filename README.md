@@ -78,12 +78,12 @@ own values within the `rules` property:
 
 You might also need to add the following to your ESLint config if you get an error about Jest not being able to detect the version:
 
-```json
-{
-  "settings": {
-    "jest": { "version": "detect" }
-  }
-}
+```js
+  settings: {
+    jest: {
+      version: 'detect',
+    },
+  },
 ```
 
 Consult the [ESLint documentation][eslint-configuration] for more information about configuring ESLint, and take a look at the config files in this repo for more information about the rules and plugins they include.
