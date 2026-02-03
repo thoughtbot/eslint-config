@@ -1,6 +1,3 @@
-// Fix eslint shareable config (https://github.com/eslint/eslint/issues/3458)
-require('@rushstack/eslint-patch/modern-module-resolution');
-
 // base used for both React web and React Native
 module.exports = {
   env: { jest: true },
