@@ -4,11 +4,11 @@ import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import jestPlugin from 'eslint-plugin-jest';
 import testingLibraryPlugin from 'eslint-plugin-testing-library';
-import base from './base.js';
+import baseConfig from './base.js';
 import { reactRules, reactHooksRules } from './rules/index.js';
 
 export default [
-  ...base,
+  ...baseConfig,
   jsxA11y.flatConfigs.recommended,
   {
     plugins: {

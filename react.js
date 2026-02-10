@@ -1,4 +1,4 @@
-import reactBase from './react-base.js';
-import prettier from './prettier.js';
+import reactBaseConfig from './react-base.js';
+import prettierConfig from './prettier.js';
 
-export default [...reactBase, ...prettier];
+export default [...reactBaseConfig, ...prettierConfig];

@@ -1,3 +1,3 @@
-import react from './react.js';
+import reactConfig from './react.js';
 
-export default react;
+export default reactConfig;

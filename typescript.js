@@ -1,11 +1,11 @@
 import tseslint from 'typescript-eslint';
-import tsParser from '@typescript-eslint/parser'; // TODO
+import tsParser from '@typescript-eslint/parser';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 import { typescriptRules } from './rules/index.js';
-import base from './base.js';
+import baseConfig from './base.js';
 
 export default [
-  base,
+  baseConfig,
   ...tseslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
   {
