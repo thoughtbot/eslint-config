@@ -2,14 +2,14 @@ import js from '@eslint/js';
 import importPlugin from 'eslint-plugin-import';
 import globals from 'globals';
 import {
-  bestPractices,
-  errors,
-  es6,
-  imports,
-  node,
-  strict,
-  style,
-  variables,
+  bestPracticesRules,
+  errorsRules,
+  es6Rules,
+  importsRules,
+  nodeRules,
+  strictRules,
+  styleRules,
+  variablesRules,
 } from './rules/index.js';
 
 export default [
@@ -26,12 +26,12 @@ export default [
       },
     },
   },
-  bestPractices,
-  errors,
-  node,
-  style,
-  variables,
-  es6,
-  imports,
-  strict,
+  bestPracticesRules,
+  errorsRules,
+  nodeRules,
+  styleRules,
+  variablesRules,
+  es6Rules,
+  importsRules,
+  strictRules,
 ];

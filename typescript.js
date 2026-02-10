@@ -1,7 +1,7 @@
 import tseslint from 'typescript-eslint';
 import tsParser from '@typescript-eslint/parser'; // TODO
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
-import { typescript } from './rules/index.js';
+import { typescriptRules } from './rules/index.js';
 import base from './base.js';
 
 export default [
@@ -22,5 +22,5 @@ export default [
       'import/resolver': [createTypeScriptImportResolver()],
     },
   },
-  typescript,
+  typescriptRules,
 ];
