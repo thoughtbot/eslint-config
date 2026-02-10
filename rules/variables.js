@@ -7,9 +7,9 @@
 // This is dangerous as it hides accidentally undefined variables.
 // We blacklist the globals that we deem potentially confusing.
 // To use them, explicitly reference them, e.g. `window.name` or `window.status`.
-const confusingBrowserGlobals = require('confusing-browser-globals');
+import confusingBrowserGlobals from 'confusing-browser-globals';
 
-module.exports = {
+export default {
   rules: {
     // enforce or disallow variable initializations at definition
     'init-declarations': 'off',

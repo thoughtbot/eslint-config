@@ -2,7 +2,7 @@
 // of the Airbnb rules added at the end
 // https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb
 
-module.exports = {
+export default {
   rules: {
     // enforces no braces where they can be omitted
     // https://eslint.org/docs/rules/arrow-body-style

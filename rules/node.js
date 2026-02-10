@@ -2,11 +2,7 @@
 // of the Airbnb rules added at the end
 // https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb
 
-module.exports = {
-  env: {
-    node: true,
-  },
-
+export default {
   rules: {
     // enforce return after a callback
     'callback-return': 'off',

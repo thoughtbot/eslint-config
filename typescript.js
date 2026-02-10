@@ -1,20 +1,26 @@
-module.exports = {
-  parser: '@typescript-eslint/parser',
-  extends: [
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:import/typescript',
-    './rules/typescript',
-  ],
-  parserOptions: {
-    parser: '@typescript-eslint/parser',
-    project: 'tsconfig.json',
-  },
-  plugins: ['@typescript-eslint'],
+import tseslint from 'typescript-eslint';
+import tsParser from '@typescript-eslint/parser'; // TODO
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
+import { typescript } from './rules/index.js';
+import base from './base.js';
 
-  settings: {
-    'import/resolver': {
-      typescript: {}, // load tsconfig.json
+export default [
+  base,
+  ...tseslint.configs.recommended,
+  ...tseslint.configs.recommendedTypeChecked,
+  {
+    plugins: {
+      '@typescript-eslint': tseslint.plugin,
+    },
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        project: 'tsconfig.json',
+      },
+    },
+    settings: {
+      'import/resolver': [createTypeScriptImportResolver()],
     },
   },
-};
+  typescript,
+];

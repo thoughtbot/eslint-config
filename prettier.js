@@ -1,3 +1,3 @@
-module.exports = {
-  extends: ['prettier'],
-};
+import prettierConfig from 'eslint-config-prettier/flat';
+
+export default [prettierConfig];

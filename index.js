@@ -1,1 +1,3 @@
-module.exports = require('./react.js');
+import react from './react.js';
+
+export default react;

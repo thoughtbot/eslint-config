@@ -1,23 +1,45 @@
 // base used for both React web and React Native
-module.exports = {
-  env: { jest: true },
-  extends: [
-    require.resolve('./base'),
-    'plugin:react-hooks/recommended',
-    'plugin:jest/recommended',
-    './rules/react',
-    './rules/react-hooks',
-  ],
-  overrides: [
-    {
-      files: ['**/__tests__/**/*', '**/*.{spec,test}.*'],
-      extends: ['plugin:testing-library/react'],
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+import reactPlugin from 'eslint-plugin-react';
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import jestPlugin from 'eslint-plugin-jest';
+import testingLibraryPlugin from 'eslint-plugin-testing-library';
+import base from './base.js';
+import { react, reactHooks } from './rules/index.js';
+
+export default [
+  ...base,
+  jsxA11y.flatConfigs.recommended,
+  {
+    plugins: {
+      react: reactPlugin,
+      'react-hooks': reactHooksPlugin,
+      jest: jestPlugin,
     },
-  ],
-  plugins: ['react', 'react-hooks', 'jest'],
-  settings: {
-    react: {
-      version: 'detect',
+    languageOptions: {
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+      globals: {
+        ...pluginJest.environments.globals.globals,
+      },
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
     },
   },
-};
+  reactPlugin.configs.flat.recommended,
+  reactPlugin.configs.flat['jsx-runtime'],
+  reactHooksPlugin.configs.flat.recommended,
+  jestPlugin.configs['flat/recommended'],
+  react,
+  reactHooks,
+  {
+    files: ['**/__tests__/**/*', '**/*.{spec,test}.*'],
+    ...testingLibraryPlugin.configs['flat/react'],
+  },
+];

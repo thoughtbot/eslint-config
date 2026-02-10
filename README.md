@@ -28,7 +28,7 @@ yarn add @thoughtbot/eslint-config --dev
 This package includes configurations for most common tech stacks. Update your [ESLint configuration][eslint-configuration] to extend the appropriate setup:
 
 - `@thoughtbot/eslint-config` - React web, Jest, Testing Library, Prettier
-- `@thoughtbot/eslint-config/react` - React web (same as above)
+- `@thoughtbot/eslint-config/react` - same as `@thoughtbot/eslint-config`
 - `@thoughtbot/eslint-config/base` - base web config, no React or Prettier
 - `@thoughtbot/eslint-config/native` - React Native, Jest, RN Testing Library, Prettier
 - `@thoughtbot/eslint-config/prettier` - Prettier, automatically used when using React or Native config
@@ -105,6 +105,19 @@ Your config will look like this:
 ```
 
 Version 2.0.0 _should_ still work with ESLint 7 and 8 if you ignore the peer dependency warnings. But that will not be true for future versions of this config.
+## What do each of the plugin dependencies do?
+
+- `@typescript-eslint/parser`: allow ESLint to parse TypeScript files
+- `@typescript-eslint/eslint-plugin`: linting rules for TypeScript
+- `eslint-plugin-import`: lint import/export syntax and spelling of file paths and import names
+- `eslint-import-resolver-typescript`: add TypeScript support to `eslint-plugin-import`
+- `eslint-plugin-jest`: lint Jest tests
+- `eslint-plugin-testing-library`: linting rules for Testing Library
+- `eslint-plugin-react`: React-specific linting rules
+- `eslint-plugin-react-hooks`: linting rules for React patterns
+- `eslint-plugin-jsx-a11y`: find accessibility issues in React code
+- `eslint-config-prettier`: turns off rules that conflict with Prettier
+- `confusing-browser-globals`: list of browser global variables that might cause naming conflicts - passed to ESLint's `no-restricted-globals` config
 
 ## License
 

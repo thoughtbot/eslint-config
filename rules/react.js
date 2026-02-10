@@ -2,15 +2,7 @@
 // of the Airbnb rules added at the end
 // https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb
 
-module.exports = {
-  plugins: ['react'],
-
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
-
+export default {
   // View link below for react rules documentation
   // https://github.com/jsx-eslint/eslint-plugin-react#list-of-supported-rules
   rules: {

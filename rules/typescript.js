@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   rules: {
     // TypeScript's `noFallthroughCasesInSwitch` option is more robust
     'default-case': 'off',
