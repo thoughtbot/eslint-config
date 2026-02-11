@@ -26,12 +26,21 @@
     "postinstall": "node bin/postinstall.js"
   },
   "peerDependencies": {
-    "eslint": ">= 5.7.0",
+    "eslint": ">= 9",
     "jest": ">= 25.0.0",
     "typescript": ">= 4.0.0"
   },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    },
+    "jest": {
+      "optional": true
+    }
+  },
   "devDependencies": {
-    "eslint": "^10.0.0"
+    "eslint": "^9.0.0",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "8",
