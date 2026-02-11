@@ -5,7 +5,7 @@ import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import jestPlugin from 'eslint-plugin-jest';
 import testingLibraryPlugin from 'eslint-plugin-testing-library';
 import baseConfig from './base.js';
-import { reactRules, reactHooksRules } from './rules/index.js';
+import { react, reactHooks } from './rules/index.js';
 
 export default [
   ...baseConfig,
@@ -36,8 +36,8 @@ export default [
       },
     },
     rules: {
-      ...reactRules.rules,
-      ...reactHooksRules.rules,
+      ...react.rules,
+      ...reactHooks.rules,
     },
   },
 

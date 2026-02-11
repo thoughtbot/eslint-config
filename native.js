@@ -1,6 +1,6 @@
 // import reactNativeA11yPlugin from 'eslint-plugin-react-native-a11y';
 import reactBaseConfig from './react-base.js';
-import { nativeRules } from './rules/index.js';
+import { native } from './rules/index.js';
 import prettierConfig from './prettier.js';
 
 export default [
@@ -16,7 +16,7 @@ export default [
       },
     },
     rules: {
-      ...nativeRules.rules,
+      ...native.rules,
     },
   },
   ...prettierConfig,
