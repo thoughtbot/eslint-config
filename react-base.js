@@ -9,8 +9,12 @@ import { reactRules, reactHooksRules } from './rules/index.js';
 
 export default [
   ...baseConfig,
-  jsxA11y.flatConfigs.recommended,
   {
+    name: 'eslint-plugin-jsx-a11y/recommended',
+    ...jsxA11y.flatConfigs.recommended,
+  },
+  {
+    name: '@thoughtbot/eslint-config/react-base',
     plugins: {
       react: reactPlugin,
       'react-hooks': reactHooksPlugin,
@@ -23,7 +27,7 @@ export default [
         },
       },
       globals: {
-        ...pluginJest.environments.globals.globals,
+        ...jestPlugin.environments.globals.globals,
       },
     },
     settings: {
@@ -31,14 +35,30 @@ export default [
         version: 'detect',
       },
     },
+    rules: {
+      ...reactRules.rules,
+      ...reactHooksRules.rules,
+    },
   },
-  reactPlugin.configs.flat.recommended,
-  reactPlugin.configs.flat['jsx-runtime'],
-  reactHooksPlugin.configs.flat.recommended,
-  jestPlugin.configs['flat/recommended'],
-  reactRules,
-  reactHooksRules,
+
   {
+    name: 'eslint-react/recomended',
+    ...reactPlugin.configs.flat.recommended,
+  },
+  {
+    name: 'eslint-react/jsx-runtime',
+    ...reactPlugin.configs.flat['jsx-runtime'],
+  },
+  {
+    name: 'eslint-plugin-react-hooks/recomended',
+    ...reactHooksPlugin.configs.flat.recommended,
+  },
+  {
+    name: 'eslint-plugin-jest/recommended',
+    ...jestPlugin.configs['flat/recommended'],
+  },
+  {
+    name: '@thoughtbot/eslint-config/react-base/base/testing',
     files: ['**/__tests__/**/*', '**/*.{spec,test}.*'],
     ...testingLibraryPlugin.configs['flat/react'],
   },

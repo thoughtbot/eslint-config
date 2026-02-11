@@ -5,10 +5,11 @@ import { typescriptRules } from './rules/index.js';
 import baseConfig from './base.js';
 
 export default [
-  baseConfig,
-  ...tseslint.configs.recommended,
+  // we don't include the thoughtbot baseConfig because this config is intended to be used alongside other configs
+  // the recommendedTypeChecked config also includes recommended TS rules
   ...tseslint.configs.recommendedTypeChecked,
   {
+    name: '@thoughtbot/eslint-config/typescript',
     plugins: {
       '@typescript-eslint': tseslint.plugin,
     },
@@ -21,6 +22,8 @@ export default [
     settings: {
       'import/resolver': [createTypeScriptImportResolver()],
     },
+    rules: {
+      ...typescriptRules.rules,
+    },
   },
-  typescriptRules,
 ];

@@ -27,8 +27,8 @@ yarn add @thoughtbot/eslint-config --dev
 
 This package includes configurations for most common tech stacks. Update your [ESLint configuration][eslint-configuration] to extend the appropriate setup:
 
-- `@thoughtbot/eslint-config` - React web, Jest, Testing Library, Prettier
-- `@thoughtbot/eslint-config/react` - same as `@thoughtbot/eslint-config`
+- `@thoughtbot/eslint-config` - same as `@thoughtbot/eslint-config/react`
+- `@thoughtbot/eslint-config/react` - React web, Jest, Testing Library, Prettier
 - `@thoughtbot/eslint-config/base` - base web config, no React or Prettier
 - `@thoughtbot/eslint-config/native` - React Native, Jest, RN Testing Library, Prettier
 - `@thoughtbot/eslint-config/prettier` - Prettier, automatically used when using React or Native config
@@ -43,47 +43,80 @@ Following are some example usages of this config (eg. in `eslint.config.mjs`).
 React with TypeScript:
 
 ```js
-  extends: compat.extends(
-    '@thoughtbot/eslint-config',
-    '@thoughtbot/eslint-config/typescript',
-  )
+import { defineConfig } from "eslint/config";
+import thoughtbotConfig from "@thoughtbot/eslint-config";
+import thoughtbotTypescriptConfig from "@thoughtbot/eslint-config/typescript";
+
+export default defineConfig([
+  {
+    extends: [
+      thoughtbotConfig,
+      thoughtbotTypescriptConfig,
+    ],
+  },
+]);
 ```
 
 React Native with TypeScript:
 
 ```js
-  extends: compat.extends(
-    '@thoughtbot/eslint-config/native',
-    '@thoughtbot/eslint-config/typescript'
-  )
+import { defineConfig } from "eslint/config";
+import thoughtbotTypescriptConfig from "@thoughtbot/eslint-config/typescript";
+import thoughtbotNativeConfig from "@thoughtbot/eslint-config/native";
+
+export default defineConfig([
+  {
+    extends: [
+      thoughtbotNativeConfig,
+      thoughtbotTypescriptConfig,
+    ],
+  },
+]);
 ```
 
 Base web without React or TypeScript
 
 ```js
-  extends: compat.extends(
-    '@thoughtbot/eslint-config/base',
-  )
+import { defineConfig } from "eslint/config";
+import thoughtbotBaseConfig from "@thoughtbot/eslint-config/base";
+
+export default defineConfig([
+  {
+    extends: [
+      thoughtbotBaseConfig,
+    ],
+  },
+]);
 ```
 
 You can override rules from the shared configuration, by setting your
 own values within the `rules` property:
 
 ```js
-  rules: {
-    'no-console': 'off',
-    'import/order': 'off',
-  }
+import { defineConfig } from "eslint/config";
+import thoughtbotBaseConfig from "@thoughtbot/eslint-config/base";
+
+export default defineConfig([
+  {
+    extends: [
+      thoughtbotBaseConfig,
+    ],
+    rules: {
+      'no-console': 'off',
+      'import/order': 'off',
+    }
+  },
+]);
 ```
 
 You might also need to add the following to your ESLint config if you get an error about Jest not being able to detect the version:
 
 ```js
-  settings: {
-    jest: {
-      version: 'detect',
-    },
+settings: {
+  jest: {
+    version: 'detect',
   },
+},
 ```
 
 Consult the [ESLint documentation][eslint-configuration] for more information about configuring ESLint, and take a look at the config files in this repo for more information about the rules and plugins they include.
@@ -107,8 +140,7 @@ Your config will look like this:
 Version 2.0.0 _should_ still work with ESLint 7 and 8 if you ignore the peer dependency warnings. But that will not be true for future versions of this config.
 ## What do each of the plugin dependencies do?
 
-- `@typescript-eslint/parser`: allow ESLint to parse TypeScript files
-- `@typescript-eslint/eslint-plugin`: linting rules for TypeScript
+- `@typescript-eslint`: allow ESLint to parse TypeScript files, and provides linting rules for TypeScript
 - `eslint-plugin-import`: lint import/export syntax and spelling of file paths and import names
 - `eslint-import-resolver-typescript`: add TypeScript support to `eslint-plugin-import`
 - `eslint-plugin-jest`: lint Jest tests
@@ -118,6 +150,10 @@ Version 2.0.0 _should_ still work with ESLint 7 and 8 if you ignore the peer dep
 - `eslint-plugin-jsx-a11y`: find accessibility issues in React code
 - `eslint-config-prettier`: turns off rules that conflict with Prettier
 - `confusing-browser-globals`: list of browser global variables that might cause naming conflicts - passed to ESLint's `no-restricted-globals` config
+
+## Testing your configs
+
+You can use `npx @eslint/config-inspector` to open a browser-based inspector that tells you the status of all the rules (and whether anything is broken).
 
 ## License
 

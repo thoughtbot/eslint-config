@@ -13,9 +13,16 @@ import {
 } from './rules/index.js';
 
 export default [
-  js.configs.recommended,
-  importPlugin.flatConfigs.recommended,
   {
+    name: '@eslint/js/recommended',
+    ...js.configs.recommended,
+  },
+  {
+    name: 'eslint-plugin-import/recommended',
+    ...importPlugin.flatConfigs.recommended,
+  },
+  {
+    name: '@thoughtbot/eslint-config/base',
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -25,13 +32,15 @@ export default [
         ...globals.es2021,
       },
     },
+    rules: {
+      ...bestPracticesRules.rules,
+      ...errorsRules.rules,
+      ...nodeRules.rules,
+      ...styleRules.rules,
+      ...variablesRules.rules,
+      ...es6Rules.rules,
+      ...importsRules.rules,
+      ...strictRules.rules,
+    },
   },
-  bestPracticesRules,
-  errorsRules,
-  nodeRules,
-  styleRules,
-  variablesRules,
-  es6Rules,
-  importsRules,
-  strictRules,
 ];

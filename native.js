@@ -7,12 +7,16 @@ export default [
   ...reactBaseConfig,
   // TODO: Re-enable when eslint-plugin-react-native-a11y is added back
   // ...reactNativeA11yPlugin.configs['all'],
-  nativeRules,
+
   {
+    name: '@thoughtbot/eslint-config/native',
     settings: {
       react: {
         version: 'detect',
       },
+    },
+    rules: {
+      ...nativeRules.rules,
     },
   },
   ...prettierConfig,
