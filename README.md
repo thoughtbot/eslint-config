@@ -38,58 +38,52 @@ The configurations that include Prettier turn off all formatting rules that are 
 
 ### Example usage:
 
-Following are some example usages of this config (eg. in `.eslintrc.js`).
+Following are some example usages of this config (eg. in `eslint.config.mjs`).
 
 React with TypeScript:
 
-```json
-{
-  "extends": [
-    "@thoughtbot/eslint-config",
-    "@thoughtbot/eslint-config/typescript"
-  ]
-}
+```js
+  extends: compat.extends(
+    '@thoughtbot/eslint-config',
+    '@thoughtbot/eslint-config/typescript',
+  )
 ```
 
 React Native with TypeScript:
 
-```json
-{
-  "extends": [
-    "@thoughtbot/eslint-config/native",
-    "@thoughtbot/eslint-config/typescript"
-  ]
-}
+```js
+  extends: compat.extends(
+    '@thoughtbot/eslint-config/native',
+    '@thoughtbot/eslint-config/typescript'
+  )
 ```
 
 Base web without React or TypeScript
 
-```json
-{
-  "extends": ["@thoughtbot/eslint-config/base"]
-}
+```js
+  extends: compat.extends(
+    '@thoughtbot/eslint-config/base',
+  )
 ```
 
 You can override rules from the shared configuration, by setting your
 own values within the `rules` property:
 
-```json
-{
-  "extends": "@thoughtbot/eslint-config",
-  "rules": {
-    "react/jsx-newline": "warn"
+```js
+  rules: {
+    'no-console': 'off',
+    'import/order': 'off',
   }
-}
 ```
 
 You might also need to add the following to your ESLint config if you get an error about Jest not being able to detect the version:
 
-```json
-{
-  "settings": {
-    "jest": { "version": "detect" }
-  }
-}
+```js
+  settings: {
+    jest: {
+      version: 'detect',
+    },
+  },
 ```
 
 Consult the [ESLint documentation][eslint-configuration] for more information about configuring ESLint, and take a look at the config files in this repo for more information about the rules and plugins they include.
@@ -98,7 +92,7 @@ Consult the [ESLint documentation][eslint-configuration] for more information ab
 
 ## License
 
-thoughtbot ESLint Config is copyright (c) 2023 thoughtbot, inc.
+thoughtbot ESLint Config is copyright (c) 2026 thoughtbot, inc.
 It is free software, and may be redistributed under the
 terms specified in the [LICENSE] file.
 
