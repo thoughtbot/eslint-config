@@ -18,3 +18,8 @@ Nothing at the moment.
 ## 1.0.3 - 2024-01-10
 
 - Upgrade dependencies: eslint-plugin-react-hooks 5.0.0
+
+## 2.0.0 - 2026-02-27
+
+- Add support for ESLint 9
+- Closes https://github.com/thoughtbot/eslint-config/issues/10
