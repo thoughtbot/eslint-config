@@ -90,6 +90,22 @@ Consult the [ESLint documentation][eslint-configuration] for more information ab
 
 [eslint-configuration]: https://eslint.org/docs/user-guide/configuring
 
+## Using this with older ESLint versions
+
+[Version 2.0.0](https://github.com/thoughtbot/eslint-config/releases/tag/v2.0.0) of this package bumped the ESLint peer dependency to ESLint 9. If you want to use this config with older versions of ESLint, your best bet is to use [an older version @thoughtbot/eslint-config](https://www.npmjs.com/package/@thoughtbot/eslint-config?activeTab=versions). 
+
+Your config will look like this:
+```js
+{
+  "extends": [
+    "@thoughtbot/eslint-config",
+    "@thoughtbot/eslint-config/typescript"
+  ]
+}
+```
+
+Version 2.0.0 _should_ still work with ESLint 7 and 8 if you ignore the peer dependency warnings. But that will not be true for future versions of this config.
+
 ## License
 
 thoughtbot ESLint Config is copyright (c) 2026 thoughtbot, inc.
