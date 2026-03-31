@@ -23,3 +23,9 @@ Nothing at the moment.
 
 - Add support for ESLint 9
 - Closes https://github.com/thoughtbot/eslint-config/issues/10
+
+## 2.1.0-alpha.1 - 2026-03-31
+
+- Convert configs to ESLint 9 flat configs
+- Add `"type": "module"` to package.json for ESM support
+- Remove `eslint-plugin-react-native-a11y` temporarily until it supports ESLint 9+
